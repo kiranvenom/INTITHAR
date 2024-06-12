@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+@layer utilities {
+	.maxW {
+		@apply max-w-[1200px] m-auto;
+	}
+}
+
+.active {
+	color: #b5362e;
+}
+
+/*======================
+    Whatsapp
+=======================*/
+
+.whatsappBtn {
+	position: fixed;
+	right: 10%;
+	bottom: 16%;
+	z-index: 9999;
+}
+
+.bg,
+.whatsappButton {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.bg {
+	animation: pulse 1.2s ease infinite;
+	background: #13990a;
+}
+
+.whatsappButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 999;
+	border: none;
+	background: #13990a;
+	cursor: pointer;
+	outline: none;
+}
+
+.ri-whatsapp-line {
+	font-size: 2rem;
+	color: #fff;
+}
+
+.button a {
+	position: absolute;
+	color: #fff;
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.3;
+	}
+	100% {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+	.whatsappBtn {
+		right: 5%;
+		bottom: 10%;
+	}
+
+	.bg,
+	.whatsappButton {
+		width: 60px;
+		height: 60px;
+	}
+
+	.ri-whatsapp-line {
+		font-size: 1.5rem;
+	}
+
+	.button a {
+		font-size: 0.875rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.whatsappBtn {
+		right: 20%;
+		bottom: 10%;
+	}
+
+	.bg,
+	.whatsappButton {
+		width: 50px;
+		height: 50px;
+	}
+
+	.ri-whatsapp-line {
+		font-size: 1.25rem;
+	}
+
+	.button a {
+		font-size: 0.75rem;
+	}
+}
